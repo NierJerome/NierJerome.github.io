@@ -24,17 +24,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="关于 NPM 下不同包全局安装与本地安装的区别及意义？webpack 官网中给出的两种安装方式   1 什么是全局安装？安装位置全局安装方式是键入命令：npm install -g *包名*或 npm install --global *包名*(-g 的含义是代表安装到全局环境里面）安装完成后会放在 _nodejs&#x2F;node_modules_ 中可以使用命令npm root -g查看 nodejs">
+  <meta name="description" content="webpack 官网中给出的两种安装方式   什么是全局安装？安装位置全局安装方式是键入命令：npm install -g *包名*或 npm install --global *包名*(-g 的含义是代表安装到全局环境里面）安装完成后会放在 _nodejs&#x2F;node_modules_ 中可以使用命令npm root -g查看 nodejs 的安装根目录 调用方式全局安装后可以供命令行(comma">
 <meta property="og:type" content="article">
-<meta property="og:title" content="全局安装与本地安装">
+<meta property="og:title" content="关于 NPM 下不同包全局安装与本地安装的区别及意义？">
 <meta property="og:url" content="http://example.com/2020/10/29/sss/index.html">
 <meta property="og:site_name" content="了不起的盖茨比">
-<meta property="og:description" content="关于 NPM 下不同包全局安装与本地安装的区别及意义？webpack 官网中给出的两种安装方式   1 什么是全局安装？安装位置全局安装方式是键入命令：npm install -g *包名*或 npm install --global *包名*(-g 的含义是代表安装到全局环境里面）安装完成后会放在 _nodejs&#x2F;node_modules_ 中可以使用命令npm root -g查看 nodejs">
+<meta property="og:description" content="webpack 官网中给出的两种安装方式   什么是全局安装？安装位置全局安装方式是键入命令：npm install -g *包名*或 npm install --global *包名*(-g 的含义是代表安装到全局环境里面）安装完成后会放在 _nodejs&#x2F;node_modules_ 中可以使用命令npm root -g查看 nodejs 的安装根目录 调用方式全局安装后可以供命令行(comma">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/ruAMsa53pVQWN7FLK88i5h.bH3Aic0QqKPELBhgBJzzvq9iKFGVg9BAU4A7R4QUdjEHER0NM7Es6ogtejCnar47bhTBameBP*TNdE*EUQD4!/b&bo=vwLOAAAAAAADB1E!&rf=viewer_4">
 <meta property="og:image" content="http://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/45NBuzDIW489QBoVep5mcXYGus3JyTeVS*f1Cy05VksEmiTzEJTg3ikpEWOTbECrbFioRMuNHPNf1Hnqmtd0mUag3LzA*4JLO20oVATcpHE!/b&bo=zgLnAAAAAAADFxk!&rf=viewer_4">
 <meta property="article:published_time" content="2020-10-29T02:51:06.000Z">
-<meta property="article:modified_time" content="2020-10-29T02:52:52.816Z">
+<meta property="article:modified_time" content="2020-10-29T04:12:27.261Z">
 <meta property="article:author" content="安哥拉兔丶">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/ruAMsa53pVQWN7FLK88i5h.bH3Aic0QqKPELBhgBJzzvq9iKFGVg9BAU4A7R4QUdjEHER0NM7Es6ogtejCnar47bhTBameBP*TNdE*EUQD4!/b&bo=vwLOAAAAAAADB1E!&rf=viewer_4">
@@ -53,7 +53,7 @@
   };
 </script>
 
-  <title>全局安装与本地安装 | 了不起的盖茨比</title>
+  <title>关于 NPM 下不同包全局安装与本地安装的区别及意义？ | 了不起的盖茨比</title>
   
 
 
@@ -155,7 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E-NPM-%E4%B8%8B%E4%B8%8D%E5%90%8C%E5%8C%85%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E6%84%8F%E4%B9%89%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">关于 NPM 下不同包全局安装与本地安装的区别及意义？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">1 什么是全局安装？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">安装位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">调用方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BB%80%E4%B9%88%E4%BD%BF%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">2 什么使本地安装 ？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE-1"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">安装位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F-1"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">调用方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F-%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">2 全局安装与本地安装的使用方式 ？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%8F%AA%E6%98%AF%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">如果只是全局安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">本地安装的特点</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是全局安装？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">调用方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">什么是本地安装 ？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE-1"><span class="nav-number">2.1.</span> <span class="nav-text">安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F-1"><span class="nav-number">2.2.</span> <span class="nav-text">调用方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F-%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">全局安装与本地安装的使用方式 ？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%8F%AA%E6%98%AF%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">如果只是全局安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">3.2.</span> <span class="nav-text">本地安装的特点</span></a></li></ol></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -223,7 +223,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          全局安装与本地安装
+          关于 NPM 下不同包全局安装与本地安装的区别及意义？
         </h1>
 
         <div class="post-meta-container">
@@ -235,7 +235,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2020-10-29 10:51:06 / Modified: 10:52:52" itemprop="dateCreated datePublished" datetime="2020-10-29T10:51:06+08:00">2020-10-29</time>
+      <time title="Created: 2020-10-29 10:51:06 / Modified: 12:12:27" itemprop="dateCreated datePublished" datetime="2020-10-29T10:51:06+08:00">2020-10-29</time>
     </span>
 
   
@@ -248,18 +248,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="关于-NPM-下不同包全局安装与本地安装的区别及意义？"><a href="#关于-NPM-下不同包全局安装与本地安装的区别及意义？" class="headerlink" title="关于 NPM 下不同包全局安装与本地安装的区别及意义？"></a>关于 NPM 下不同包全局安装与本地安装的区别及意义？</h1><p>webpack 官网中给出的两种安装方式</p>
+        <p>webpack 官网中给出的两种安装方式</p>
 <p><img src="https://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/ruAMsa53pVQWN7FLK88i5h.bH3Aic0QqKPELBhgBJzzvq9iKFGVg9BAU4A7R4QUdjEHER0NM7Es6ogtejCnar47bhTBameBP*TNdE*EUQD4!/b&bo=vwLOAAAAAAADB1E!&rf=viewer_4" alt="webpack全局安装方式"></p>
 <p><img src="http://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/45NBuzDIW489QBoVep5mcXYGus3JyTeVS*f1Cy05VksEmiTzEJTg3ikpEWOTbECrbFioRMuNHPNf1Hnqmtd0mUag3LzA*4JLO20oVATcpHE!/b&bo=zgLnAAAAAAADFxk!&rf=viewer_4" alt="webpack本地安装方式"></p>
-<h2 id="1-什么是全局安装？"><a href="#1-什么是全局安装？" class="headerlink" title="1 什么是全局安装？"></a>1 什么是全局安装？</h2><h4 id="安装位置"><a href="#安装位置" class="headerlink" title="安装位置"></a>安装位置</h4><p>全局安装方式是键入命令：<code>npm install -g *包名*</code>或 <code>npm install --global *包名*</code><br><span style="color:#ccc;font-size:15px">(-g 的含义是代表安装到全局环境里面）</span>安装完成后会放在 _nodejs/node_modules_ 中<br>可以使用命令<code>npm root -g</code>查看 nodejs 的安装根目录</p>
-<h4 id="调用方式"><a href="#调用方式" class="headerlink" title="调用方式"></a>调用方式</h4><p>全局安装后可以供命令行(command line)使用，用户可以在命令行中直接运行该组件包支持的命令</p>
-<h2 id="2-什么使本地安装-？"><a href="#2-什么使本地安装-？" class="headerlink" title="2 什么使本地安装 ？"></a>2 什么使本地安装 ？</h2><h4 id="安装位置-1"><a href="#安装位置-1" class="headerlink" title="安装位置"></a>安装位置</h4><p>本地安装方式是键入命令：<code>npm install *包名*</code> 或 <code>npm install --save-dev *包名*</code><span style="color:#ccc;font-size:15px">(–save-dev 的含义是代表安装到当前目录中）</span>一般我们再项目中使用其它依赖时都需要，通过终端（cmd，powershell 等）转到项目目录下，进行安装。</p>
-<h4 id="调用方式-1"><a href="#调用方式-1" class="headerlink" title="调用方式"></a>调用方式</h4><p>本地安装后可以直接通过 require()的方式引入项目中 node_modules 目录下的模块</p>
-<h2 id="2-全局安装与本地安装的使用方式-？"><a href="#2-全局安装与本地安装的使用方式-？" class="headerlink" title="2 全局安装与本地安装的使用方式 ？"></a>2 全局安装与本地安装的使用方式 ？</h2><h4 id="如果只是全局安装"><a href="#如果只是全局安装" class="headerlink" title="如果只是全局安装"></a>如果只是全局安装</h4><ol>
+<h1 id="什么是全局安装？"><a href="#什么是全局安装？" class="headerlink" title="什么是全局安装？"></a>什么是全局安装？</h1><h2 id="安装位置"><a href="#安装位置" class="headerlink" title="安装位置"></a>安装位置</h2><p>全局安装方式是键入命令：<code>npm install -g *包名*</code>或 <code>npm install --global *包名*</code><br><span style="color:#ccc;font-size:15px">(-g 的含义是代表安装到全局环境里面）</span>安装完成后会放在 _nodejs/node_modules_ 中<br>可以使用命令<code>npm root -g</code>查看 nodejs 的安装根目录</p>
+<h2 id="调用方式"><a href="#调用方式" class="headerlink" title="调用方式"></a>调用方式</h2><p>全局安装后可以供命令行(command line)使用，用户可以在命令行中直接运行该组件包支持的命令</p>
+<h1 id="什么是本地安装-？"><a href="#什么是本地安装-？" class="headerlink" title="什么是本地安装 ？"></a>什么是本地安装 ？</h1><h2 id="安装位置-1"><a href="#安装位置-1" class="headerlink" title="安装位置"></a>安装位置</h2><p>本地安装方式是键入命令：<code>npm install *包名*</code> 或 <code>npm install --save-dev *包名*</code><span style="color:#ccc;font-size:15px">(–save-dev 的含义是代表安装到当前目录中）</span>一般我们再项目中使用其它依赖时都需要，通过终端（cmd，powershell 等）转到项目目录下，进行安装。</p>
+<h2 id="调用方式-1"><a href="#调用方式-1" class="headerlink" title="调用方式"></a>调用方式</h2><p>本地安装后可以直接通过 require()的方式引入项目中 node_modules 目录下的模块</p>
+<h1 id="全局安装与本地安装的使用方式-？"><a href="#全局安装与本地安装的使用方式-？" class="headerlink" title="全局安装与本地安装的使用方式 ？"></a>全局安装与本地安装的使用方式 ？</h1><h2 id="如果只是全局安装"><a href="#如果只是全局安装" class="headerlink" title="如果只是全局安装"></a>如果只是全局安装</h2><ol>
 <li>不能直接通过require()的方式去引用模块，需要手动解决包路径的配置问题，当然你也可以复制全局安装的node_modules文件夹到项目下，还有办法可以选择将环境变量的NODE_PATH设置为C:\Program Files\nodejs。<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/node-multi-version.html">设置环境变量请参考…</a></li>
 <li>对于包的更新不好管理，可能你需要为每个包重新命名，如 <em>包@3.8.1、包@3.9.1…</em> ，为了区别不同项目使用指定的包，保证模块之间的相互依赖，区别每个项目正常运行。</li>
 </ol>
-<h4 id="本地安装的特点"><a href="#本地安装的特点" class="headerlink" title="本地安装的特点"></a>本地安装的特点</h4><p>由于包的版本在不断更替，特别的当不同包引入了破坏式变更(breaking change)的依赖，则会使项目发生编译出错等bug。<br>本地安装可以让每个项目拥有独立的包，不受全局包的影响，方便项目的移动、复制、打包等，保证不同版本包之间的相互依赖，这些优点是全局安装难以做到的。这也使得多人协作中不用刻意管理不同的依赖。</p>
+<h2 id="本地安装的特点"><a href="#本地安装的特点" class="headerlink" title="本地安装的特点"></a>本地安装的特点</h2><p>由于包的版本在不断更替，特别的当不同包引入了破坏式变更(breaking change)的依赖，则会使项目发生编译出错等bug。<br>本地安装可以让每个项目拥有独立的包，不受全局包的影响，方便项目的移动、复制、打包等，保证不同版本包之间的相互依赖，这些优点是全局安装难以做到的。这也使得多人协作中不用刻意管理不同的依赖。</p>
 <p>另外，据node团队介绍，本地安装包对于项目的加载会更快。</p>
 <p>有优点也少不了缺点，如每次新项目都要本地安装所依赖的包，安装包时间相对较长，一来是包太大导致下载慢；二是浪费了硬盘空间。</p>
 
