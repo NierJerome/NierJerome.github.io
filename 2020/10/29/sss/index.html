@@ -24,31 +24,36 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="纪念执着的爱">
-<meta property="og:type" content="website">
-<meta property="og:title" content="了不起的盖茨比">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="关于 NPM 下不同包全局安装与本地安装的区别及意义？webpack 官网中给出的两种安装方式   1 什么是全局安装？安装位置全局安装方式是键入命令：npm install -g *包名*或 npm install --global *包名*(-g 的含义是代表安装到全局环境里面）安装完成后会放在 _nodejs&#x2F;node_modules_ 中可以使用命令npm root -g查看 nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全局安装与本地安装">
+<meta property="og:url" content="http://example.com/2020/10/29/sss/index.html">
 <meta property="og:site_name" content="了不起的盖茨比">
-<meta property="og:description" content="纪念执着的爱">
+<meta property="og:description" content="关于 NPM 下不同包全局安装与本地安装的区别及意义？webpack 官网中给出的两种安装方式   1 什么是全局安装？安装位置全局安装方式是键入命令：npm install -g *包名*或 npm install --global *包名*(-g 的含义是代表安装到全局环境里面）安装完成后会放在 _nodejs&#x2F;node_modules_ 中可以使用命令npm root -g查看 nodejs">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/ruAMsa53pVQWN7FLK88i5h.bH3Aic0QqKPELBhgBJzzvq9iKFGVg9BAU4A7R4QUdjEHER0NM7Es6ogtejCnar47bhTBameBP*TNdE*EUQD4!/b&bo=vwLOAAAAAAADB1E!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/45NBuzDIW489QBoVep5mcXYGus3JyTeVS*f1Cy05VksEmiTzEJTg3ikpEWOTbECrbFioRMuNHPNf1Hnqmtd0mUag3LzA*4JLO20oVATcpHE!/b&bo=zgLnAAAAAAADFxk!&rf=viewer_4">
+<meta property="article:published_time" content="2020-10-29T02:51:06.000Z">
+<meta property="article:modified_time" content="2020-10-29T02:52:52.816Z">
 <meta property="article:author" content="安哥拉兔丶">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/ruAMsa53pVQWN7FLK88i5h.bH3Aic0QqKPELBhgBJzzvq9iKFGVg9BAU4A7R4QUdjEHER0NM7Es6ogtejCnar47bhTBameBP*TNdE*EUQD4!/b&bo=vwLOAAAAAAADB1E!&rf=viewer_4">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2020/10/29/sss/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>了不起的盖茨比</title>
+  <title>全局安装与本地安装 | 了不起的盖茨比</title>
   
 
 
@@ -137,7 +142,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -150,6 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E-NPM-%E4%B8%8B%E4%B8%8D%E5%90%8C%E5%8C%85%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E6%84%8F%E4%B9%89%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">关于 NPM 下不同包全局安装与本地安装的区别及意义？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">1 什么是全局安装？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">安装位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">调用方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BB%80%E4%B9%88%E4%BD%BF%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">2 什么使本地安装 ？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE-1"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">安装位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F-1"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">调用方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F-%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">2 全局安装与本地安装的使用方式 ？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%8F%AA%E6%98%AF%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">如果只是全局安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">本地安装的特点</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -191,11 +197,12 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
       
 
       
-    
+
+  
 
 
 <div class="post-block">
@@ -215,10 +222,9 @@
       <meta itemprop="name" content="了不起的盖茨比">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/29/sss/" class="post-title-link" itemprop="url">全局安装与本地安装</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          全局安装与本地安装
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -242,7 +248,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="关于-NPM-下不同包全局安装与本地安装的区别及意义？"><a href="#关于-NPM-下不同包全局安装与本地安装的区别及意义？" class="headerlink" title="关于 NPM 下不同包全局安装与本地安装的区别及意义？"></a>关于 NPM 下不同包全局安装与本地安装的区别及意义？</h1><p>webpack 官网中给出的两种安装方式</p>
+        <h1 id="关于-NPM-下不同包全局安装与本地安装的区别及意义？"><a href="#关于-NPM-下不同包全局安装与本地安装的区别及意义？" class="headerlink" title="关于 NPM 下不同包全局安装与本地安装的区别及意义？"></a>关于 NPM 下不同包全局安装与本地安装的区别及意义？</h1><p>webpack 官网中给出的两种安装方式</p>
 <p><img src="https://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/ruAMsa53pVQWN7FLK88i5h.bH3Aic0QqKPELBhgBJzzvq9iKFGVg9BAU4A7R4QUdjEHER0NM7Es6ogtejCnar47bhTBameBP*TNdE*EUQD4!/b&bo=vwLOAAAAAAADB1E!&rf=viewer_4" alt="webpack全局安装方式"></p>
 <p><img src="http://m.qpic.cn/psc?/V527UvA82WGDGk0CHZVH01bhZi0WMvyT/45NBuzDIW489QBoVep5mcXYGus3JyTeVS*f1Cy05VksEmiTzEJTg3ikpEWOTbECrbFioRMuNHPNf1Hnqmtd0mUag3LzA*4JLO20oVATcpHE!/b&bo=zgLnAAAAAAADFxk!&rf=viewer_4" alt="webpack本地安装方式"></p>
 <h2 id="1-什么是全局安装？"><a href="#1-什么是全局安装？" class="headerlink" title="1 什么是全局安装？"></a>1 什么是全局安装？</h2><h4 id="安装位置"><a href="#安装位置" class="headerlink" title="安装位置"></a>安装位置</h4><p>全局安装方式是键入命令：<code>npm install -g *包名*</code>或 <code>npm install --global *包名*</code><br><span style="color:#ccc;font-size:15px">(-g 的含义是代表安装到全局环境里面）</span>安装完成后会放在 _nodejs/node_modules_ 中<br>可以使用命令<code>npm root -g</code>查看 nodejs 的安装根目录</p>
@@ -257,7 +263,6 @@
 <p>另外，据node团队介绍，本地安装包对于项目的加载会更快。</p>
 <p>有优点也少不了缺点，如每次新项目都要本地安装所依赖的包，安装包时间相对较长，一来是包太大导致下载慢；二是浪费了硬盘空间。</p>
 
-      
     </div>
 
     
@@ -265,189 +270,24 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/10/27/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" rel="prev" title="学习内容">
+                  <i class="fa fa-chevron-left"></i> 学习内容
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
 
 
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/27/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="安哥拉兔丶">
-      <meta itemprop="description" content="纪念执着的爱">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="了不起的盖茨比">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/27/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" class="post-title-link" itemprop="url">学习内容</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2020-10-27 14:47:56 / Modified: 16:00:42" itemprop="dateCreated datePublished" datetime="2020-10-27T14:47:56+08:00">2020-10-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><hr>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/html/index.asp">W3C HTML&amp;HTML5基础教程</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML">MDN 学习 HTML ：指南与教程</a></p>
-<p>关于html的学习  </p>
-<ul>
-<li>熟悉常用标签、属性</li>
-<li>理解块级元素、行内元素</li>
-<li>HTML 表格及相关功能</li>
-<li>H5标签语义化<br><em>待补充</em></li>
-</ul>
-</li>
-</ul>
-<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><hr>
-<ul>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a><h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1></li>
-</ul>
-<hr>
-<h1 id="React-js"><a href="#React-js" class="headerlink" title="React.js"></a>React.js</h1><hr>
-<h1 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h1><hr>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="安哥拉兔丶">
-      <meta itemprop="description" content="纪念执着的爱">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="了不起的盖茨比">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/27/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-10-27 10:39:57" itemprop="dateCreated datePublished" datetime="2020-10-27T10:39:57+08:00">2020-10-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-10-29 09:37:14" itemprop="dateModified" datetime="2020-10-29T09:37:14+08:00">2020-10-29</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span> </span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-  
 
 
 
